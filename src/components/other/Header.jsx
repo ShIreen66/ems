@@ -1,12 +1,34 @@
-import React from 'react'
+import React from "react";
 
-const Header = () => {
+const Header = ({ changeUser, data }) => {
+  // ✅ Get Username based on login type
+  const username = data ? data.firstName : "Admin";
+
+  const logOutUser = () => {
+    localStorage.removeItem("loggedInUser");
+    changeUser("");
+    // Optionally: window.location.reload();
+  };
+
   return (
-    <div className='flex justify-between items-end'>
-        <h1 className='text-2xl font-medium'>Hello <br /> <span className='text-3xl font-semibold'>Guys 👋</span></h1>
-        <button className='bg-red-700 text-white px-5 py-2 rounded-sm text-lg font-medium'>Log Out</button>
-    </div>
-  )
-}
+    <div className="flex items-center justify-between bg-gray-800 p-4 rounded-lg shadow-md mb-6">
+      {/* Greeting */}
+      <div>
+        <h1 className="text-xl md:text-2xl font-semibold text-white">
+          Hello, <span className="text-emerald-400">{username} 👋</span>
+        </h1>
+        <p className="text-sm text-gray-400">Welcome to your dashboard</p>
+      </div>
 
-export default Header
+      {/* Logout Button */}
+      <button
+        onClick={logOutUser}
+        className="bg-red-500 hover:bg-red-600 text-white text-sm font-medium px-4 py-2 rounded-md transition"
+      >
+        Log Out
+      </button>
+    </div>
+  );
+};
+
+export default Header;

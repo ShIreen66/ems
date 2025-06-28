@@ -1,54 +1,55 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("email is", email);
-    console.log("password is", password);
-
+    handleLogin(email, password);
     setEmail("");
     setPassword("");
   };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
-      <div className="w-full max-w-md  rounded-2xl shadow-2xl p-10 border border-emerald-600">
-        <h2 className="text-3xl font-bold text-emerald-700 mb-8 text-center">
-          Login
+    <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+      <div className="w-full max-w-md bg-gray-800 rounded-2xl shadow-lg p-8">
+        <h2 className="text-3xl font-bold text-center text-emerald-400 mb-8">
+          Login to Your Account
         </h2>
-        <form
-          onSubmit={(e) => {
-            submitHandler(e);
-          }}
-          className="flex flex-col gap-5 w-full"
-        >
-          <input
-            required
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            className="border border-emerald-600 py-3 px-5 text-lg text-emerald-900 outline-none bg-emerald-50 rounded-xl placeholder:text-emerald-400 focus:ring-2 focus:ring-emerald-300 transition w-full"
-            type="email"
-            placeholder="Enter your email"
-          />
-          <input
-            required
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            className="border border-emerald-600 py-3 px-5 text-lg text-emerald-900 outline-none bg-emerald-50 rounded-xl placeholder:text-emerald-400 focus:ring-2 focus:ring-emerald-300 transition w-full"
-            type="password"
-            placeholder="Enter your password"
-          />
+        <form onSubmit={submitHandler} className="flex flex-col space-y-5">
+          {/* Email Input */}
+          <div>
+            <label className="block text-sm mb-1 text-gray-300">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-emerald-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
+            />
+          </div>
+
+          {/* Password Input */}
+          <div>
+            <label className="block text-sm mb-1 text-gray-300">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-emerald-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
+            />
+          </div>
+
+          {/* Submit Button */}
           <button
-            className="mt-4 bg-emerald-600 hover:bg-emerald-700 transition text-lg font-semibold text-white py-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 w-full"
             type="submit"
+            className="w-full py-2 bg-emerald-500 hover:bg-emerald-600 transition text-lg font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
           >
-            Log in
+            Log In
           </button>
         </form>
       </div>

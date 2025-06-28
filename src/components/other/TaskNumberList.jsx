@@ -1,29 +1,44 @@
-import React from 'react'
+import React from "react";
 
-const TaskNumberList = () => {
+const TaskNumberList = ({ data }) => {
+  const { newTask, completed, active, failed } = data.taskCounts;
+
+  const cards = [
+    {
+      count: newTask,
+      label: "New Tasks",
+      bgColor: "bg-blue-500",
+    },
+    {
+      count: completed,
+      label: "Completed",
+      bgColor: "bg-green-500",
+    },
+    {
+      count: active,
+      label: "Active",
+      bgColor: "bg-yellow-400 text-black",
+    },
+    {
+      count: failed,
+      label: "Failed",
+      bgColor: "bg-red-500",
+    },
+  ];
+
   return (
-    <div className='flex justify-between w-full gap-5 mt-10 overflow-auto'>
-        <div className='rounded-xl w-[45%] bg-red-400 py-6 px-9'>
-            <h2 className='text-3xl font-semibold'>0</h2>
-            <h3 className='text-xl font-medium'>New Task</h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+      {cards.map((card, idx) => (
+        <div
+          key={idx}
+          className={`rounded-xl py-6 px-6 shadow-md text-white ${card.bgColor} flex flex-col items-center justify-center`}
+        >
+          <h2 className="text-4xl font-bold">{card.count}</h2>
+          <p className="text-lg mt-2 font-medium">{card.label}</p>
         </div>
-
-         <div className='rounded-xl w-[45%] bg-blue-400 py-6 px-9'>
-            <h2 className='text-3xl font-semibold'>0</h2>
-            <h3 className='text-xl font-medium'>New Task</h3>
-        </div>
-
-         <div className='rounded-xl w-[45%] bg-green-400 py-6 px-9'>
-            <h2 className='text-3xl font-semibold'>0</h2>
-            <h3 className='text-xl font-medium'>New Task</h3>
-        </div>
-
-         <div className='rounded-xl w-[45%] bg-yellow-400 py-6 px-9'>
-            <h2 className='text-3xl font-semibold'>0</h2>
-            <h3 className='text-xl font-medium'>New Task</h3>
-        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default TaskNumberList
+export default TaskNumberList;
