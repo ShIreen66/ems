@@ -1,25 +1,23 @@
-
 const FailedTask = ({ data }) => {
   return (
-    <div className="flex-shrink-0 w-[300px] bg-gray-800 rounded-xl shadow-md p-5 text-white">
-      {/* Header: Category and Date */}
-      <div className="flex justify-between items-center mb-3">
-        <span className="bg-red-500 text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+    <div className="flex-shrink-0 w-full max-w-xs sm:max-w-sm bg-gray-800 rounded-xl shadow-md p-4 sm:p-5 text-white mx-auto">
+    
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 sm:mb-3 gap-1 sm:gap-0">
+        <span className="bg-red-500 text-xs px-3 py-1 rounded-full uppercase tracking-wide mb-1 sm:mb-0">
           {data.category}
         </span>
-        <span className="text-sm text-gray-300">{data.taskDate}</span>
+        <span className="text-xs sm:text-sm text-gray-300">{data.taskDate}</span>
       </div>
 
-      {/* Task Title */}
-      <h2 className="text-lg font-semibold mb-2">{data.taskTitle}</h2>
+      
+      <h2 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{data.taskTitle}</h2>
 
-      {/* Task Description */}
-      <p className="text-sm text-gray-400">{data.taskDescription}</p>
+      <p className="text-xs sm:text-sm text-gray-400">{data.taskDescription}</p>
 
-      {/* Failed Button */}
-      <div className="mt-5">
+
+      <div className="mt-4 sm:mt-5">
         <button
-          className="w-full bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 rounded-md transition"
+          className="w-full bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-medium py-2 rounded-md transition"
         >
           Mark as Failed
         </button>

@@ -27,14 +27,14 @@ const TaskNumberList = ({ data }) => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mt-4 sm:mt-8">
       {cards.map((card, idx) => (
         <div
           key={idx}
-          className={`rounded-xl py-6 px-6 shadow-md text-white ${card.bgColor} flex flex-col items-center justify-center`}
+          className={`rounded-xl py-4 sm:py-6 px-4 sm:px-6 shadow-md text-white ${card.bgColor} flex flex-col items-center justify-center min-w-0`}
         >
-          <h2 className="text-4xl font-bold">{card.count}</h2>
-          <p className="text-lg mt-2 font-medium">{card.label}</p>
+          <h2 className="text-2xl sm:text-4xl font-bold">{card.count}</h2>
+          <p className="text-base sm:text-lg mt-1 sm:mt-2 font-medium">{card.label}</p>
         </div>
       ))}
     </div>
