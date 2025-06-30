@@ -51,7 +51,9 @@ const CreateTask = () => {
 
   return (
     <div className="bg-gray-800 p-6 rounded-xl shadow-md mt-8">
-      <h2 className="text-2xl font-semibold text-emerald-400 mb-6">Create New Task</h2>
+      <h2 className="text-2xl font-semibold text-emerald-400 mb-6">
+        Create New Task
+      </h2>
       <form
         onSubmit={submitHandler}
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -59,7 +61,9 @@ const CreateTask = () => {
         {/* Left Section */}
         <div className="space-y-4">
           <div>
-            <label className="block text-sm text-gray-300 mb-1">Task Title</label>
+            <label className="block text-sm text-gray-300 mb-1">
+              Task Title
+            </label>
             <input
               value={taskTitle}
               onChange={(e) => setTaskTitle(e.target.value)}
@@ -82,7 +86,9 @@ const CreateTask = () => {
           </div>
 
           <div>
-            <label className="block text-sm text-gray-300 mb-1">Assign To</label>
+            <label className="block text-sm text-gray-300 mb-1">
+              Assign To
+            </label>
             <input
               value={assignTo}
               onChange={(e) => setAssignTo(e.target.value)}
@@ -109,7 +115,9 @@ const CreateTask = () => {
         {/* Right Section */}
         <div className="flex flex-col space-y-4">
           <div>
-            <label className="block text-sm text-gray-300 mb-1">Description</label>
+            <label className="block text-sm text-gray-300 mb-1">
+              Description
+            </label>
             <textarea
               value={taskDescription}
               onChange={(e) => setTaskDescription(e.target.value)}
