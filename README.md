@@ -1,6 +1,6 @@
-#  Employee Management System (EMS)
+#  Workflow Manager 
 
-A modern **Employee Management System (EMS)** built with **React** and **Vite**, designed for seamless employee and task management.  
+A modern **Workflow Manager or Employee Management System (EMS)** built with **React** and **Vite**, designed for seamless employee and task management.  
 
 ---
 
