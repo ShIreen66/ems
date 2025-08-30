@@ -1,29 +1,19 @@
-EMS (Employee Management System)
-A modern Employee Management System (EMS) built with React and Vite.
+#  Employee Management System (EMS)
 
-Features
-User authentication (Login)
-Admin and Employee Dashboards
-Task management (Create, Accept, Complete, Fail tasks)
-Task listing and filtering
-Persistent authentication using local storage
+A modern **Employee Management System (EMS)** built with **React** and **Vite**, designed for seamless employee and task management.  
 
-Getting Started
-1. Install dependencies:
-npm install
+---
 
-2. Run the development server:
-npm run dev
+##  Features
 
-3. Build for production:
-npm run build
+-  **User Authentication (Login)**  
+-  **Role-based Dashboards** (Admin & Employee)  
+-  **Task Management** (Create, Accept, Complete, Fail tasks)  
+-  **Task Listing & Filtering**  
+-  **Persistent Authentication** using Local Storage  
 
-4. Preview the production builds:
-npm run preview
+---
+## Overview
 
-Tech Stack
-React
-Vite
-React-Router-DOM
-JavaScript (ES6+)
-Tailwind CSS
+WorkFlow Manager(EMS) provides a modern, responsive, and efficient way to manage employees and tasks.
+Admins can assign and monitor tasks, while employees can update their task status in real time.
